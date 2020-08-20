@@ -9,7 +9,7 @@ library("phase1.1.qc.test")
 data("icd.list")
 data("lab.range")
 # need to specify the input directly
-# dir.input: the input directory (e.g.,"/Users/") is where you put the phase1.1 data (e.g., ClinicalCourse-MGB.csv)
+# dir.input: the input directory (e.g.,"/Users/") is where you put the phase1.1 data (e.g., ClinicalCourse-RIVHS.csv)
 
 site.nm="RIVHS"
 dat.DailyCounts=read.csv(paste0(dir.input,"/DailyCounts-",site.nm,".csv"))
