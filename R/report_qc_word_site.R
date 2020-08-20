@@ -1,6 +1,5 @@
-report_qc_word_site=function(dir.input, dir.output,icd.list,lab.range,site.nm){
+report_qc_word_site=function(dir.input, nm.report.file,icd.list,lab.range,site.nm){
 qc.res=qc_site(dir.input, icd.list,lab.range,site.nm)
-nm.report.file=paste0(dir.output,"phase1.1.qc.report.", site.nm,".doc")
 colnames(qc.res$qc.dm$err.report)=
   colnames(qc.res$qc.cc$err.report)=
   colnames(qc.res$qc.dc$err.report)=
