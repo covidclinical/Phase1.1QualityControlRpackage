@@ -1,5 +1,5 @@
-report_qc_word_site=function(dir.input, nm.report.file,icd.list,lab.range,site.nm){
-qc.res=qc_site(dir.input, icd.list,lab.range,site.nm)
+report_qc_word_site=function(dat.DailyCounts, dat.ClinicalCourse, dat.Demographics, dat.Diagnoses, dat.Labs, dat.Medications, nm.report.file,icd.list,lab.range,site.nm){
+qc.res=qc_site(dat.DailyCounts, dat.ClinicalCourse, dat.Demographics, dat.Diagnoses, dat.Labs, dat.Medications, icd.list,lab.range,site.nm)
 colnames(qc.res$qc.dm$err.report)=
   colnames(qc.res$qc.cc$err.report)=
   colnames(qc.res$qc.dc$err.report)=
