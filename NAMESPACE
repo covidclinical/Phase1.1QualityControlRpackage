@@ -1,0 +1,4 @@
+exportPattern("^[[:alpha:]]+")
+importFrom(rtf,RTF,done,addParagraph,addTable)
+importFrom(dplyr,left_join)
+importFrom(utils,read.csv)
