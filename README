@@ -1,4 +1,4 @@
-# R cods for running quality control for the phase1.1 data
+#R cods for running quality control for the phase1.1 data
 library(devtools)
 install_github("ChuanHong/phase1.1.qc.test")
 library("phase1.1.qc.test")
