@@ -4,7 +4,7 @@
 \description{
 Create the QC report in word file}
 \usage{
-report_qc_word_site(dir.input, dir.output, icd.list, lab.range, site.nm)
+report_qc_word_site(dir.input, nm.report.file, icd.list, lab.range, site.nm)
 }
 \arguments{
   \item{dir.input}{the directory for input csv data files}
