@@ -10,8 +10,8 @@ data("icd.list")
 data("lab.range")
 # need to specify the input and output directly
 # dir.input: the input directory (e.g.,"/Users/") is where you put the phase1.1 data (e.g., ClinicalCourse-MGB.csv)
-# dir.output: the output directory is where you waht to save the output file
+# nm.report.file: the directory and file name of the qc report
 
 site.nm="RIVHS"
-report_qc_word_site(dir.input, dir.output, icd.list, lab.range, site.nm)
+report_qc_word_site(dir.input, nm.report.file=paste0("phase1.1.qc.report.", site.nm,".doc"), icd.list, lab.range, site.nm)
 ```
