@@ -18,6 +18,7 @@ dat.Demographics=read.csv(paste0(dir.input,"/Demographics-",site.nm,".csv"))
 dat.Diagnoses=read.csv(paste0(dir.input,"/Diagnoses-",site.nm,".csv"))
 dat.Labs=read.csv(paste0(dir.input,"/Labs-",site.nm,".csv"))
 dat.Medications=read.csv(paste0(dir.input,"/Medications-",site.nm,".csv"))
+nm.report.file=paste0("phase1.1.qc.report.", site.nm,".doc")
 
-report_qc_word_site(dat.DailyCounts, dat.ClinicalCourse, dat.Demographics, dat.Diagnoses, dat.Labs, dat.Medications, nm.report.file=paste0("phase1.1.qc.report.", site.nm,".doc"), icd.list, lab.range, site.nm)
+report_qc_word_site(dat.DailyCounts, dat.ClinicalCourse, dat.Demographics, dat.Diagnoses, dat.Labs, dat.Medications, nm.report.file, icd.list, lab.range, site.nm)
 ```
