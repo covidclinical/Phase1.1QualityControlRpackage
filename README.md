@@ -8,7 +8,7 @@ install_github("ChuanHong/phase1.1.qc.test")
 library("phase1.1.qc.test")
 data("icd.list")
 data("lab.range")
-# need to specify the input and output directly
+# need to specify the input directly
 # dir.input: the input directory (e.g.,"/Users/") is where you put the phase1.1 data (e.g., ClinicalCourse-MGB.csv)
 
 site.nm="RIVHS"
