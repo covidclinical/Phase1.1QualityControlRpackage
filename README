@@ -1,0 +1,14 @@
+# R cods for running quality control for the phase1.1 data
+library(devtools)
+install_github("ChuanHong/phase1.1.qc.test")
+library("phase1.1.qc.test")
+data("icd.list")
+data("lab.range")
+# need to specify the input and output directly
+# the input directory is where you put the phase1.1 data (e.g., ClinicalCourse-MGB.csv)
+# the output directory is where you waht to save the output file
+# dir.input=
+# dir.output=
+
+site.nm="RIVHS"
+report_qc_word_site(dir.input, dir.output, icd.list, lab.range, site.nm)
