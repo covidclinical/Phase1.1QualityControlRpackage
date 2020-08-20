@@ -1,4 +1,4 @@
-qc_site=function(dat.Demographics, dat.ClinicalCourse, dat.DailyCounts, dat.Labs, dat.Medications, icd.list,lab.range, site.nm){
+qc_site=function(dat.DailyCounts, dat.ClinicalCourse, dat.Demographics, dat.Diagnoses, dat.Labs, dat.Medications, icd.list,lab.range,site.nm){
 qc.dm=err_report_demographics_site(dat.Demographics, site.nm)
 qc.cc=err_report_clinicalcourse_site(dat.ClinicalCourse, site.nm)
 qc.dc=err_report_dailycounts_site(dat.DailyCounts, site.nm)
