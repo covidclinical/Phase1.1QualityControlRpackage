@@ -1,10 +1,4 @@
-qc_site=function(dir.input, icd.list,lab.range, site.nm){
-dat.DailyCounts=read.csv(paste0(dir.input,"/DailyCounts-",site.nm,".csv"))
-dat.ClinicalCourse=read.csv(paste0(dir.input,"/ClinicalCourse-",site.nm,".csv"))
-dat.Demographics=read.csv(paste0(dir.input,"/Demographics-",site.nm,".csv"))
-dat.Diagnoses=read.csv(paste0(dir.input,"/Diagnoses-",site.nm,".csv"))
-dat.Labs=read.csv(paste0(dir.input,"/Labs-",site.nm,".csv"))
-dat.Medications=read.csv(paste0(dir.input,"/Medications-",site.nm,".csv"))
+qc_site=function(dat.Demographics, dat.ClinicalCourse, dat.DailyCounts, dat.Labs, dat.Medications, icd.list,lab.range, site.nm){
 qc.dm=err_report_demographics_site(dat.Demographics, site.nm)
 qc.cc=err_report_clinicalcourse_site(dat.ClinicalCourse, site.nm)
 qc.dc=err_report_dailycounts_site(dat.DailyCounts, site.nm)
