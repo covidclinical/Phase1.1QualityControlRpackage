@@ -230,7 +230,6 @@ err_report_lab_site=function(dat.ClinicalCourse, dat.Demographics, dat.DailyCoun
 }
 
 err_report_med_site=function(dat.ClinicalCourse, dat.Demographics, dat.DailyCounts, dat.Medications, site.nm){
-  if(is.null(dat.Medications)==1){err.report=data.frame(site.nm=site.nm, label="no input data file for medication")}else{
   err.label1="N_all_before > N_all at day0"
   err.label2="N_all_since > N_all at day0"
   err.label3= "N_all_before < N_ever_severe_before"
@@ -241,7 +240,8 @@ err_report_med_site=function(dat.ClinicalCourse, dat.Demographics, dat.DailyCoun
   err.label8= "no data"
 
   err.label=c(err.label1, err.label2, err.label3, err.label4, err.label5, err.label6, err.label7, err.label8)
-
+  if(is.null(dat.Medications)==1){
+    err.report=data.frame(site.nm=site.nm, label="no input data file for medication")}else{
     dat.site.cc=dat.ClinicalCourse
     colnames(dat.site.cc)=tolower(colnames(dat.site.cc))
     dat.site.dm=dat.Demographics
