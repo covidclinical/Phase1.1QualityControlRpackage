@@ -230,6 +230,7 @@ err_report_lab_site=function(dat.ClinicalCourse, dat.Demographics, dat.DailyCoun
 }
 
 err_report_med_site=function(dat.ClinicalCourse, dat.Demographics, dat.DailyCounts, dat.Medications, site.nm){
+  if(is.null(dat.Medications)==1){err.report=data.frame(site.nm=site.nm, label="no input data file for medication")}else{
   err.label1="N_all_before > N_all at day0"
   err.label2="N_all_since > N_all at day0"
   err.label3= "N_all_before < N_ever_severe_before"
@@ -280,7 +281,7 @@ err_report_med_site=function(dat.ClinicalCourse, dat.Demographics, dat.DailyCoun
     }
     report=data.frame(site.nm, label=err.label, err)
 
-  err.report=report[report[,"err"]==TRUE,c("site.nm", "label")]
+  err.report=report[report[,"err"]==TRUE,c("site.nm", "label")]}
   list(err.report=err.report, err.label=err.label)
 }
 
@@ -299,14 +300,19 @@ err_report_lab_unit_site=function(dat.Labs, lab.range, site.nm){
   err.report=NULL
   for(nm.lab in nm.lab.all){
     tmp=comb.lab[comb.lab$loinc%in%nm.lab,c("days_since_admission","mean_log_value_all")]
+    tmp$mean_log_value_all[tmp$mean_log_value_all%in%c(-99,-999, -Inf, Inf)]=NA
+    tmp=tmp[which(is.na(tmp$mean_log_value_all)!=1),]
+    if(dim(tmp)[1]>=5){
     tmp.range=lab.range[,c(1,which(grepl(gsub("-",".",nm.lab),colnames(lab.range))==1))]
     colnames(tmp.range)[2:3]=c("LB", "UB")
     tmp=left_join(tmp, tmp.range, by="days_since_admission")
     err.tmp=1*(sum(tmp$mean_log_value_all<tmp$LB)>(0.9*dim(tmp)[1])|sum(tmp$mean_log_value_all>tmp$UB)>(0.9*dim(tmp)[1]))
     err.tmp=c(site.nm, err.tmp,paste0("lab unit issue for ", nm.lab))
     err.report=rbind(err.report, err.tmp)}
-
- colnames(err.report)=c(site.nm, "err","label")
+  }
+  if(is.null(err.report)!=1){
+  err.report=data.frame(err.report)}else{err.report=data.frame(matrix(NA,1,3))}
+  colnames(err.report)=c(site.nm, "err","label")
   err.report=err.report[err.report[,"err"]==1,c(site.nm, "label")]
   list(err.report=err.report)
 }
