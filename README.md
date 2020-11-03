@@ -1,11 +1,11 @@
 # 1. Install the package
 ```R
 library(devtools)
-install_github("ChuanHong/phase1.1.qc.test")
+install_github("ChuanHong/Phase1.1QualityControlRpackage")
 ```
 # 2. Conduct quality control
 ```R
-library("phase1.1.qc.test")
+library("Phase1.1QualityControlRpackage")
 data("icd.list")
 data("lab.range")
 # need to specify the input directly
