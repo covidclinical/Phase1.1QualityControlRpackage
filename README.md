@@ -5,7 +5,7 @@ install_github("covidclinical/Phase1.1QualityControlRpackage")
 ```
 # 2. Conduct quality control
 ```R
-library("Phase1.1QualityControlRpackage")
+library("phase1.1.qc.test")
 data("icd.list")
 data("lab.range")
 # need to specify the input directly
