@@ -1,7 +1,7 @@
 # 1. Install the package
 ```R
 library(devtools)
-install_github("ChuanHong/Phase1.1QualityControlRpackage")
+install_github("covidclinical/Phase1.1QualityControlRpackage")
 ```
 # 2. Conduct quality control
 ```R
